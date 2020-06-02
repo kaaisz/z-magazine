@@ -1,0 +1,12 @@
+/.idea
+/.vagrant
+/.vscode
+/.vs
+
+.history/
+node_modules/
+
+/logs
+
+.env
+.DS_Store
