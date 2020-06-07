@@ -1,6 +1,10 @@
 import Vue from 'vue';
+import router from './router';
+import App from './App.vue';
 
 new Vue({
     el: '#app',
-    template: '<h1>Hello World</h1>',
+    router, // define router
+    components: { App }, // declare using root component
+    template: '<App />' // render root component
 })
