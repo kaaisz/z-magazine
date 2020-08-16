@@ -20,7 +20,6 @@ class PhotosController extends Controller
   {
     $photo = new Photo();
     $photo->title = $request->title;
-    $photo->detail = $request->detail;
     $photo->save();
 
     return redirect('/');

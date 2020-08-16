@@ -9,4 +9,4 @@
   </div>
 </form>
 <hr>
-<a href="{{ route("photo.index") }}">一覧画面へのリンク</a>
+<a href="{{ route('photo.index') }}">一覧画面へのリンク</a>

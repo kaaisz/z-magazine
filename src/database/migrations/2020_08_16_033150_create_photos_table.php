@@ -17,7 +17,7 @@ class CreatePhotosTable extends Migration
             $table->bigIncrements('id');
             $table->string('title')->nullable();
             $table->timestamps();
-            
+
         });
     }
     
