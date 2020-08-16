@@ -14,6 +14,8 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::resource('photo', 'PhotosController');
+
 Route::get('/{any?}', function() {
     return view('index');
 });
