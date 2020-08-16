@@ -17,7 +17,8 @@ class PhotosController extends Controller
 
     return view('photo.index', ['photos' => $photos]);
   }
-
+  
+  // unused
   // public function create()
   // {
   //   return view('photo.create');
@@ -29,7 +30,7 @@ class PhotosController extends Controller
     $photo->title = $request->title;
     $photo->save();
 
-    return redirect('/');
+    return redirect('photo');
   }
 
   public function show($id)

@@ -1,4 +1,4 @@
-<p>photo/CRUD</p>
+<p>photo/index</p>
 
 <form action="{{ url('photo')}}" method="post">
   @csrf
@@ -9,12 +9,25 @@
   </div>
 </form>
 <hr>
-<div>
-  <ul>
-    @foreach ($photos as $photo)
-      <li>{{ $photo->title }} {{ $photo->created_at }}</li>
-    @endforeach
-  </ul>
-</div>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>title</th>
+    <th>作成日時</th>
+    <th>更新日時</th>
+    <th></th>
+  </tr>
+  @foreach ($photos as $photo)
+  <tr>
+    <td>{{ $photo->id }}</td>
+    <td>{{ $photo->title }}</td>
+    <td>{{ $photo->created_at }}</td>
+    <td>{{ $photo->updated_at }}</td>
+    <td>
+      <a href="{{ url('photo/'.$photo->id.'/edit') }}">編集</a>
+    </td>
+  </tr>
+  @endforeach
+</table>
 <hr>
-<a href="{{ route('photo.index') }}">一覧画面へのリンク</a>
+
