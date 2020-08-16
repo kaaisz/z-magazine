@@ -2,19 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Photo;
 
 class PhotosController extends Controller
 {
   public function index()
   {
-    return view('photo.index');
+    $photos = 
+      DB::table('photos')
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    return view('photo.index', ['photos' => $photos]);
   }
 
-  public function create()
-  {
-    return view('photo.create');
-  }
+  // public function create()
+  // {
+  //   return view('photo.create');
+  // }
 
   public function store(Request $request)
   {
